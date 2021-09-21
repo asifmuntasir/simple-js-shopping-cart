@@ -1,35 +1,34 @@
 let i = 0;
-const item = document.getElementById('products');
+const itemDiv = document.getElementById('products');
+const url = 'https://fakestoreapi.com/products';
 
 const cart = document.getElementById('cart-input');
 cart.addEventListener('click', () => {
     i++;
     console.log(i);
-    document.getElementById('cart-input').innerHTML=i;
+    document.getElementById('cart-input').innerHTML = i;
 });
 
-
-fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then(data=> {
-                displayProducts(data)
-                // console.log(data)
-            });
+fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        displayProducts(data)
+        // console.log(data)
+    });
 
 // console.log(data[0].name);
 
-const displayProducts = (data) => {
-    for(let i=0; i<20; i++){
-        const title = data[i].title;
-        console.log(title)
-        const price = data[i].price;
-        // console.log(data[0]);
+const displayProducts = (display_items) => {
 
-        const info = `<div><h2>${title}</h2><p>${price}</p></div>`;
-        // console.log(firstItem.title);
-        item.innerHTML = info;
-    }
-    
+    display_items.map(item => {
+        const itemName = item.title;
+        // console.log(itemName);
+        const info = document.createElement("h2");
+        // info.style.flexBasis = "250px";
+        info.innerHTML = itemName;
+        itemDiv.appendChild(info);
+        
+    })
 }
 
 
