@@ -24,10 +24,10 @@ const displayProducts = (display_items) => {
         const itemName = item.title;
         // console.log(itemName);
         const info = document.createElement("h2");
-        // info.style.flexBasis = "250px";
         info.innerHTML = itemName;
+        info.style.width = "326px";
+        info.style.border = "1px solid black";
         itemDiv.appendChild(info);
-        
     })
 }
 
