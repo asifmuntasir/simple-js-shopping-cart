@@ -21,13 +21,19 @@ fetch(url)
 const displayProducts = (display_items) => {
 
     display_items.map(item => {
+        const itemImage = item.image;
         const itemName = item.title;
-        // console.log(itemName);
-        const info = document.createElement("h2");
-        info.innerHTML = itemName;
-        info.style.width = "326px";
-        info.style.border = "1px solid black";
-        itemDiv.appendChild(info);
+        // create product div
+        const productDiv = document.createElement("div");
+        productDiv.classList.add("product_div");
+        const productDetails = `
+            <img class="item-img" src="${itemImage}"/>
+            <h4 style="margin: 10px 0px; items-align : center">${itemName}</h4>
+            <h5 style="margin-bottom: 10px; items-align : center">${item.category}</h5>
+            <h2 style="items-align : center">$${item.price}</h2>
+        `;
+        productDiv.innerHTML = productDetails;
+        itemDiv.appendChild(productDiv);
     })
 }
 
