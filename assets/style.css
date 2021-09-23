@@ -21,6 +21,7 @@
   --input-color: hsl(var(--hue-color), 24%, 97%);
   --body-color: hsl(var(--hue-color), 100%, 99%);
   --white-color: #FFF;
+  --bg-color: hsl(25, 6%, 17%);
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
 
@@ -73,7 +74,7 @@ html{
 }
 
 body{
-    margin: 1rem;
+    /* margin: 1rem; */
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
@@ -83,7 +84,7 @@ body{
 h1, 
 h2, 
 h3{
-    color: var(--title-color);
+    color: var(--text-color);
     font-weight: var(--font-semi-bold);
     font-family: var(--title-font);
 }
@@ -93,6 +94,13 @@ h3{
 /* ========== REUSABLE CSS CLASSES ========= */
 section{
     width: 100%;
+    background-color: var(--bg-color);
+    padding: 1rem;
+}
+
+.section-border{
+    /* border-bottom: 1px solid #dddddd; */
+    box-shadow: 0px 3px 3px 0px #dddddd;
 }
 
 header{
@@ -102,19 +110,23 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--white-color);
 }
 
+.title{
+    color: var(--white-color);
+}
 
 .sub-title{
-    border-bottom: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--white-color);
     color: #71b280;
 }
 
 .nav a{
     text-decoration: none;
     padding: 0.5rem;
-    color: var(--text-color);
-    transition: ease 0.3s all;
+    color: var(--white-color);
+    font-weight: 600;
 }
 
 .nav a:first-child{
@@ -122,7 +134,7 @@ header{
 }
 
 .nav a:hover{
-    border-bottom: 2px solid var(--first-color-second);
+    border-bottom: 2px solid #dddddd;
 }
 
 
@@ -142,9 +154,10 @@ header{
     margin: 10px;
     padding: 20px;
     flex-basis: 340px;
+    background-color: var(--body-color);
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+    /* box-shadow: 0px 0px 3px 0px rgba(155, 148, 148, 0.2); */
 }
 
 .item-img{
@@ -152,4 +165,18 @@ header{
     object-fit: contain;
     height: 250px;
     text-align: center;
+}
+
+.sub-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn{
+    padding: 10px 20px;
+    background-color: var(--title-color);
+    border: none;
+    color: var(--white-color);
+    cursor: pointer;
+    border-radius: 1rem;
 }
