@@ -10,22 +10,32 @@
     <title>EStudio</title>
 </head>
 <body>
-    <section class="section-border">
-        <header>
-            <h2 class="title">
-                E<span class="sub-title">Studio</span>
-            </h2>
-            <div class="nav">
-                <a href="index.html">Home</a>
-                <a href="#"><i class="ri-shopping-cart-line" id="cart-input">0</i></a>
-            </div>
-        </header>
-    </section>
+    <main>
+        <section class="section-border">
+            <header>
+                <h2 class="title">
+                    E<span class="sub-title">Studio</span>
+                </h2>
+                <div class="nav">
+                    <a href="index.html">Home</a>
+                    <a href="#" id="cart-input"><i class="ri-shopping-cart-line">0</i></a>
+                </div>
+            </header>
+        </section>
 
-    <!-- Display Products -->
-    <section>
-        <div class="product_content" id="products"></div>
-    </section>
+        <!-- Display Products -->
+        <section>
+            <div class="product_content" id="products"></div>
+        </section>
+
+        <!-- Display Cart -->
+        <div class="cart-product" id="cart-display">
+            <div class="product_info">
+                <h4>Cart Products</h4>
+                <i class="ri-close-line close-btn" id="closeBtn"></i>
+            </div>
+        </div>
+    </main>
 
 
     <!-- JavaScript File -->

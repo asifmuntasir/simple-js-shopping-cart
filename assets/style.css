@@ -90,6 +90,10 @@ h3{
 }
 
 
+main{
+    position: relative;
+}
+
 
 /* ========== REUSABLE CSS CLASSES ========= */
 section{
@@ -180,3 +184,38 @@ header{
     cursor: pointer;
     border-radius: 1rem;
 }
+
+
+
+/* ============== Display Cart Design ============== */
+.cart-product{
+    width: 40%;
+    height: 100%;
+    padding: 10px;
+    background-color: #dddddd;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: 0.4s;
+    box-shadow: -1px 0 4px hsla(var(--hue-color), 64%, 15%, 0.15);
+}
+
+.show_cart{
+    right: 0;
+}
+
+
+.product_info{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: var(--biggest-font-size);
+}
+
+
+.close-btn{
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+

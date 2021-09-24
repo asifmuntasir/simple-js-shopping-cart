@@ -2,12 +2,21 @@ let i = 0;
 const itemDiv = document.getElementById('products');
 const url = 'https://fakestoreapi.com/products';
 
-const cart = document.getElementById('cart-input');
-cart.addEventListener('click', () => {
-    i++;
-    console.log(i);
-    document.getElementById('cart-input').innerHTML = i;
-});
+const cartDisplay = document.getElementById("cart-display");
+const showCart = document.getElementById('cart-input');
+const hideCart = document.getElementById("closeBtn");
+
+if(showCart){
+    showCart.addEventListener('click', () => {
+        cartDisplay.classList.add("show_cart");
+    });
+}
+if(hideCart){
+    hideCart.addEventListener('click', () => {
+        cartDisplay.classList.remove("show_cart");
+    });
+}
+
 
 fetch(url)
     .then(res => res.json())
