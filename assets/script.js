@@ -80,6 +80,25 @@ const showDataOnCart = (data) => {
         <h5 style="align-items : center">$<span id="crntPrice">${itemPrice}</span></h5>
         <input type="number" value="1" name="productCount" id="productCount">
     `;
+    totalCalculate();
     selectedProduct.innerHTML = showSelectedProduct;
     cartDiv.appendChild(selectedProduct);
+}
+
+
+const totalCalculate = () => {
+    let inputValue = document.getElementById("productCount").value;
+    inputValue = parseInt(inputValue);
+    
+    let currentPrice = document.getElementById("crntPrice").innerHTML;
+    currentPrice = parseInt(currentPrice);
+    
+    let totalPrice = document.getElementById("total_price");
+    totalPrice = parseInt(totalPrice);
+    console.log(totalPrice)
+    
+    let price = inputValue * currentPrice;
+    console.log(price);
+    price = toString(price);
+    totalPrice.innerHTML = price;
 }

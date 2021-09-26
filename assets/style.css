@@ -254,3 +254,7 @@ header{
 }
 
 
+.total_price{
+    margin: 10px 0px;
+    border-top: 2px solid #dddddd;
+}
